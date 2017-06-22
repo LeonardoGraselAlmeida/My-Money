@@ -4,3 +4,4 @@
 frontend/dist
 !frontend/dist/*.html
 \.idea/
+**/.env
