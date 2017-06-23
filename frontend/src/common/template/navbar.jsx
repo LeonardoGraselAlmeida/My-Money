@@ -1,12 +1,11 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import { logout } from '../../auth/authActions'
 
 class Navbar extends Component {
     constructor(props) {
-        super(props);
+        super(props)
         this.state = { open: false }
     }
 
@@ -50,6 +49,6 @@ class Navbar extends Component {
     }
 }
 
-const mapStateToProps = state => ({ user: state.user })
+const mapStateToProps = state => ({ user: state.auth.user })
 const mapDispatchToProps = dispatch => bindActionCreators({ logout }, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(Navbar)

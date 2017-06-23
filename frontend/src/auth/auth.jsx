@@ -1,11 +1,10 @@
 import './auth.css'
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { reduxForm, Field } from 'redux-form'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
 import { login, signup } from './authActions'
-
 import Row from '../common/layout/row'
 import Grid from '../common/layout/grid'
 import If from '../common/operador/if'
@@ -65,6 +64,6 @@ class Auth extends Component {
     }
 }
 
+Auth = reduxForm({ form: 'authForm' })(Auth)
 const mapDispatchToProps = dispatch => bindActionCreators({ login, signup }, dispatch)
-Auth = reduxForm({ form: 'auth' })(Auth)
 export default connect(null, mapDispatchToProps)(Auth)
